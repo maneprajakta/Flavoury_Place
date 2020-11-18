@@ -7,4 +7,5 @@ app_name = 'reservation'
 
 urlpatterns = [
     path('',views.reserve_table , name='reserve_table' ),
+    path('success/' , views.send_reserve , name='send_reserve'),
 ]

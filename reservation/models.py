@@ -1,5 +1,5 @@
 from django.db import models
-
+from datetime import date
 # Create your models here.
 
 class Reservation(models.Model):
@@ -7,7 +7,7 @@ class Reservation(models.Model):
     email = models.EmailField()
     phone = models.IntegerField()
     number_of_persons = models.IntegerField()
-    Date = models.DateField()
+    Date = models.DateField(default='2020-11-16')
     time = models.TimeField()
 
 
