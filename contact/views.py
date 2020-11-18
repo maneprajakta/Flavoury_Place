@@ -14,7 +14,7 @@ def send_email(request):
             message = form.cleaned_data['message']
 
             try : 
-                send_mail(subject,message,from_email,['admin@example.com'])
+                send_mail(subject,message,from_email,['flavoryplace@gmail.com'])
 
             except BadHeaderError:
                 return HttpResponse('ivalid header') 
@@ -34,4 +34,4 @@ def send_email(request):
 
 
 def send_success(request):
-    return HttpResponse('thanks you for you email ^_^')
+    return render(request,'contact/succes.html')
