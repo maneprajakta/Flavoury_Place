@@ -1,7 +1,7 @@
 # Flavoury_Place
 DBMS Project
 
-If virtualenv is not installed :
+## If virtualenv is not installed :
 ```
 $ pip install virtualenv
 ```
