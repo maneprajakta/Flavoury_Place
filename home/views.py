@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from meals.models import Meals , Category
 from blog.models import Post
-from aboutus.models import Why_Choose_Us ,AboutUs
+from aboutus.models import Why_Choose_Us ,AboutUs,Chef
 # Create your views here.
 
 
@@ -45,3 +45,35 @@ def updateAboutus(request):
         obj.content = content
         obj.save()
     return redirect('/manager/')
+
+def updateChef(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        title = request.POST['title']
+        bio = request.POST['bio']
+        image = request.POST['image']
+        old_name = request.POST['old_name']
+        obj = Chef.objects.get(name=old_name)
+        obj.name = name
+        obj.title = title
+        obj.bio = bio
+        obj.image = image
+        obj.save()
+    return redirect('/manager')
+
+
+def chef(request):
+    obj = Chef.objects.all()
+    context = {'chef':obj}
+    return render(request , 'home/chef.html',context)
+
+def order(request):
+    meals = Meals.objects.all()
+    meal_list = Meals.objects.all()
+    categories = Category.objects.all()
+    context = {
+        'meals' : meals ,
+        'meal_list' : meal_list ,
+        'categories' : categories 
+    }
+    return render(request , 'home/order.html',context)

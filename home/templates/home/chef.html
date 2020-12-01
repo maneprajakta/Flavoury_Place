@@ -11,43 +11,53 @@
             <div class="container">
               <div class="row align-items-center">
                 <div class="col-md-12" data-aos="fade-up">
-                  <h2 class="heading text-center">|About Us Update|</h2>
+                  <h2 class="heading text-center">|Chef Update|</h2>
                 </div>
               </div>
             </div>
           </div>
         </div> <!-- .cover_1 -->
+     <div>
 
-        {% for obj in about_us %}
+{% for obj in chef %}
         
-       <p class="text-center" style="color:black;"> {{ obj.title }} </p>
-        <div class="text-center py-4 px-4">
-        <p>{{ obj.content }}</p>
-        </div>
- <!-- Update -->
-<p><button class="btn btn-block cardbutton" data-toggle="modal" data-target="#update">Update Details</button></p>
-<div class="modal fade" id="update" tabindex="-1" role="dialog" aria-labelledby="update" aria-hidden="true">
+        <p class="text-center">{{ obj.name }}</p>
+        <p class="text-center">{{ obj.title }}</p>
+        <p class="text-center">{{ obj.bio }}</p>
+        <div class ="text-center"><img  src="{{obj.image.url}}"></div>
+
+<button class="btn btn-block cardbutton" data-toggle="modal" data-target="#update{{ obj.id }}">Update Details</button>
+
+<div class="modal fade" id="update{{ obj.id }}" tabindex="-1" role="dialog" aria-labelledby="update{{ obj.id }}" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content modalback">
-      <div class="modal-header">
+      <div class="modal-header"6>  <!--- header -->
         <h5 class="modal-title" id="updateTitle">Update Details</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <form action="updateAboutus" method="post">
+      <div class="modal-body">   <!--- body -->
+        <form action="updateChef" method="post">
           {% csrf_token %}
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{obj.name}}" >
+          </div>
           <div class="form-group">
             <label for="title">Title</label>
             <input type="text" class="form-control" id="title" name="title" value="{{obj.title}}" >
           </div>
            <div class="form-group">
-            <label for="content">Content</label>
-            <input type="text" class="form-control" id="content" name="content" value="{{obj.content}}" >
+            <label for="bio">Bio</label>
+            <input type="text" class="form-control" id="bio" name="bio" value="{{obj.bio}}" >
           </div>
           <div class="form-group">
-            <input type="hidden" class="form-control" id="old_title" name="old_title" value="{{obj.title}}">
+            <label for="image">Image</label>
+            <input type="file" class="form-control" id="image" name="image" value="{{obj.image}}" >
+          </div>
+          <div class="form-group">
+            <input type="hidden" class="form-control" id="old_name" name="old_name" value="{{obj.name}}">
           </div>
            <div class="modal-footer">
             <button type="Submit" class="btn cardbutton btn-block">Submit</button>
@@ -56,7 +66,8 @@
         </form>
       </div>
     </div>
-  {% endfor %}
-  </div>
+   </div>
+</div>
+{% endfor %}
 
 {% endblock body %}

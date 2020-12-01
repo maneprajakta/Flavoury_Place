@@ -34,7 +34,7 @@
       <nav class="site-menu">
         <div class="site-menu-inner">
           <ul class="list-unstyled">
-            <li class="active"><a href="/">Home</a></li>
+            <li class="active home-top"><a href="/">Home</a></li>
             <li><a href="{% url 'meals:meal_list' %}">Meals</a></li>
             <li><a href="{% url 'aboutus:aboutus_list' %}">About Us</a></li>
             <li><a href="{% url 'blog:post_list' %}">Our Blog</a></li>
@@ -48,9 +48,8 @@
         <div class="row align-items-center">
           <div class="col-5 col-md-3">
              <ul class="list-unstyled social">
-              <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-              <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-              <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+              <li><a href="{% url 'admin:index' %}"><span class="fa fa-user"></span> Admin</a></li>
+              <li><a href="{% url 'home:manager' %}"><span class="fa fa-tasks"></span> Manager</a></li>
             </ul>
           </div>
           <div class="col-2 col-md-6 text-center">
@@ -58,7 +57,6 @@
           </div>
           <div class="col-5 col-md-3 text-right menu-burger-wrap">
             <a href="#" class="site-nav-toggle js-site-nav-toggle"><i></i></a>
-
           </div>
         </div>
        
@@ -131,10 +129,9 @@
     <script src="{% static 'site_static/js/jquery.stellar.min.js' %}"></script>
 
     <script src="{% static 'site_static/js/aos.js' %}"></script>
-    
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-
+    
     <script src="{% static 'site_static/js/main.js' %}"></script>
   </body>
 </html>

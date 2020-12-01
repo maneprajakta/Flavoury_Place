@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+  
+
+  <div class="main-wrap">
+        <div class="cover_1">
+          <div class="img_bg" style="background-image: url({% static 'site_static/img/slider-1.jpg' %})" data-stellar-background-ratio="0.5">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-md-12" data-aos="fade-up">
+                  <h2 class="heading text-center">| Make an Order |</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div> <!-- .cover_1 -->
+
+
+<div class="section">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-md-8" data-aos="fade-up">
+  
+                  <h2 class="mb-5 text-center">Menu List with Price</h2>
+  
+                  <ul class="nav site-tab-nav" id="pills-tab" role="tablist">
+                    {% for category in categories %}
+                      <li class="nav-item">
+                        <a class="nav-link " id="{{category}}-tab" data-toggle="pill" href="#{{category}}" role="tab" aria-controls="{{category}}" aria-selected="true">{{category}}</a>
+                      </li>
+                    {% endfor %}
+  
+                  </ul>
+  
+  
+                  <div class="tab-content" id="pills-tabContent">
+  
+                    {% for category in categories %}
+  
+                      <div class="tab-pane fade show" id="{{category}}" role="tabpanel" aria-labelledby="{{category}}-tab">
+                        
+                        {% for meal in meal_list %}
+                            {% if meal.category == category%}
+                              <div class="d-block d-md-flex menu-food-item">
+                                <div class="text order-1 mb-3 mr-5">
+                                  <h3><a href="{% url 'meals:meal_detail' meal.slug %}">{{meal.name}} {{ meal.id }}</a></h3>
+                                  <p>{{meal.description|truncatewords:20}}</p>
+                                </div>
+                                <div class="price order-2">
+                                  <strong>${{meal.price}}</strong>
+                                </div>
+                                <button  id="add{{meal.price}}" onclick="addtotal({{meal.price}},'{{meal.name}}')" class="btn btn-primary btn-outline-primary ">Add to Order</button>
+                                <button  id="sub{{meal.price}}" onclick="subtotal({{meal.price}},'{{meal.name}}')" class="btn btn-primary btn-outline-primary mr-4 ">Remove from Order</button>
+                              </div> <!-- .menu-food-item -->
+                            {% endif %}
+                        {% endfor %}
+  
+                      </div>
+                      
+                    {% endfor %}
+                    <button class="btn btn-primary btn-outline-primary ">Total :</button>
+                    <strong>$<span  id="total"></span></strong>
+                    <span  id="Result"></span>
+                  </div>  
+                </div>
+              </div>
+            </div>
+</div>
+
+<script>
+var menue = []
+var cost = []
+var total = 0;
+document.getElementById("total").innerHTML = total;
+function addtotal(prize,name) {
+    total += prize;
+    document.getElementById("total").innerHTML = total;
+    menue.push(name);
+    cost.push(prize);
+    display_array()
+}
+
+function subtotal(prize,name) {
+    total -= prize;
+    document.getElementById("total").innerHTML = total;
+    menue.pop();
+    cost.push(prize);
+    display_array()
+}
+
+console.log(total);
+
+function display_array()
+{
+   var e = "<hr/>";   
+    
+   for (var y=0; y<menue.length; y++)
+   {
+     e +=  menue[y] + " = $"+ cost[y] +"<br/>";
+   }
+   document.getElementById("Result").innerHTML = e;
+}
+</script>
+
+{% endblock body %}

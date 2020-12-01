@@ -28,6 +28,7 @@ class Why_Choose_Us(models.Model):
 
 
 class Chef(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
     title = models.CharField(max_length=50)
     bio = models.TextField()
