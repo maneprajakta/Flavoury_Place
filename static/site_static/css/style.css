@@ -11,6 +11,10 @@ body {
     color: #999999;
 }
 
+.buttons-css {
+    display: inline-flex !important;
+}
+
 a {
     -webkit-transition: .3s all ease;
     -o-transition: .3s all ease;
@@ -769,6 +773,10 @@ textarea.form-control {
 }
 
 @media (max-width: 991px) {
+    .site-logo {
+        font-size: 18px !important;
+        border: none !important;
+    }
     .owl-carousel.home-slider .slider-item .slider-text h1,
     .owl-carousel.home-slider-loop-false .slider-item .slider-text h1 {
         font-size: 40px;

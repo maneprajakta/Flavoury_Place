@@ -30,50 +30,5 @@ def home(request):
 def manager(request):
     return render(request , 'home/manager.html')
 
-def about_us(request):
-    obj = AboutUs.objects.all()
-    context = {'about_us':obj}
-    return render(request , 'home/about_us.html',context)
-
-def updateAboutus(request):
-    if request.method == 'POST':
-        title = request.POST['title']
-        content = request.POST['content']
-        old_title = request.POST['old_title']
-        obj = AboutUs.objects.get(title=old_title)
-        obj.title = title
-        obj.content = content
-        obj.save()
-    return redirect('/manager/')
-
-def updateChef(request):
-    if request.method == 'POST':
-        name = request.POST['name']
-        title = request.POST['title']
-        bio = request.POST['bio']
-        image = request.POST['image']
-        old_name = request.POST['old_name']
-        obj = Chef.objects.get(name=old_name)
-        obj.name = name
-        obj.title = title
-        obj.bio = bio
-        obj.image = image
-        obj.save()
-    return redirect('/manager')
-
-
-def chef(request):
-    obj = Chef.objects.all()
-    context = {'chef':obj}
-    return render(request , 'home/chef.html',context)
-
 def order(request):
-    meals = Meals.objects.all()
-    meal_list = Meals.objects.all()
-    categories = Category.objects.all()
-    context = {
-        'meals' : meals ,
-        'meal_list' : meal_list ,
-        'categories' : categories 
-    }
-    return render(request , 'home/order.html',context)
+    return render(request , 'home/order.html')
