@@ -7,7 +7,7 @@
     
       <div class="main-wrap">
         <div class="cover_1 cover_sm">
-          <div class="img_bg" style="background-image: url({% static 'site_static/img/slider-1.jpg' %})" data-stellar-background-ratio="0.5">
+          <div class="img_bg" style="background-image: url({% static 'site_static/img/blog.jpg' %})" data-stellar-background-ratio="0.5">
             <div class="container">
               <div class="row align-items-center justify-content-center">
                 <div class="col-md-7 text-center" data-aos="fade-up">
@@ -50,7 +50,7 @@
                     {% for comment in comments %}
                       <li class="comment">
                         <div class="vcard bio">
-                          <img src="img/person_1.jpg" alt="Image placeholder">
+                          <img src="{% static 'site_static/img/person_1.jpeg' %}" alt="Image placeholder">
                         </div>
                         <div class="comment-body">
                           <h3>{{comment.user}}</h3>
