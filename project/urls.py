@@ -29,7 +29,7 @@ urlpatterns = [
     path('reserve_table/' , include('reservation.urls' , namespace='reservation')),
     path('' , include('home.urls' , namespace='home')),
     
-]
+]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
 
 
