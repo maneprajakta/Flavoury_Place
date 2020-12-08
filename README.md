@@ -1,5 +1,5 @@
 # Flavoury_Place
-DBMS Project TE Done as mini project
+DBMS Project Done as mini project
 
 ## If virtualenv is not installed :
 ```
