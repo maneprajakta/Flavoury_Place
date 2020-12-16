@@ -1,6 +1,8 @@
 # Flavoury_Place
 DBMS Project Done as mini project
 
+Template is copied.
+
 ## If virtualenv is not installed :
 ```
 $ pip install virtualenv
