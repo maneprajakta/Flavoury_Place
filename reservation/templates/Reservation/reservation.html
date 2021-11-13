@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
 {% load static %}
+{% block title %}
+Reserve Table 
+{% endblock title %}
 {% block body %}
   
 
@@ -35,7 +38,7 @@
                   {% csrf_token %}
                   {% bootstrap_form form %}
                   {% buttons %}
-                      <button type="submit" class="btn btn-primary">Reserve A Table</button>
+                      <button type="submit" class="btn btn-primary" id="submit">Reserve A Table</button>
                   {% endbuttons %}
                 </form>
 

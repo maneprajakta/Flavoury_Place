@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load bootstrap4 %}
-{% block body %}
-  
 
-  
+{% block title %}
+ContactUs
+{% endblock  %}
+
+{% block body %}  
       <div class="main-wrap">
         <div class="cover_1 cover_sm">
           <div class="img_bg" style="background-image: url({% static 'site_static/img/contact_us.jpg' %})" data-stellar-background-ratio="0.5">
@@ -33,7 +35,7 @@
                     {% csrf_token %}
                     {% bootstrap_form form %}
                     {% buttons %}
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button id="submit" type="submit" class="btn btn-primary">Send Message</button>
                     {% endbuttons %}
                 </form>
               </div>
