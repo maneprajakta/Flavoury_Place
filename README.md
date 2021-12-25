@@ -11,6 +11,16 @@ Template is copied.
 
 ## Screen Shots
 
+<p align="center">
+  <img width="100%" height="auto" src="https://github.com/maneprajakta/Flavoury_Place/blob/main/Images/Screenshot%20from%202021-12-25%2022-09-38.png">
+</p>
+<p align="center">
+  <img width="100%" height="auto" src="https://github.com/maneprajakta/Flavoury_Place/blob/main/Images/Screenshot%20from%202021-12-25%2022-09-51.png">
+</p>
+<p align="center">
+  <img width="100%" height="auto" src="https://github.com/maneprajakta/Flavoury_Place/blob/main/Images/Screenshot%20from%202021-12-25%2022-10-29.png">
+</p>
+
 ## If virtualenv is not installed :
 ```
 $ pip install virtualenv
