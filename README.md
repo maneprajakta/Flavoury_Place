@@ -1,7 +1,15 @@
 # Flavoury_Place
-DBMS Project Done as mini project
-
+Mini Project For SQTA
+Selenium Testing Done 
+```
+Restaurant management system is the system for managing the restaurant business.The main
+point of developing this system is to help restaurant administrators manage the restaurant
+business and help customers for online reservation of tables and see restaurant menu and history
+of restaurant online.
+```
 Template is copied.
+
+## Screen Shots
 
 ## If virtualenv is not installed :
 ```
