@@ -6,6 +6,7 @@ Restaurant management system is the system for managing the restaurant business.
 point of developing this system is to help restaurant administrators manage the restaurant
 business and help customers for online reservation of tables and see restaurant menu and history
 of restaurant online.
+
 ```
 Template is copied.
 
