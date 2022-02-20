@@ -1,4 +1,4 @@
-# Flavoury_Place
+# Flavoury Place
 Mini Project For SQTA
 Selenium Testing Done 
 ```
